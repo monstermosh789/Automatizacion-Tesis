@@ -1,0 +1,15 @@
+gspread
+oauth2client
+transformers
+tqdm
+deep-translator
+pandas
+seaborn
+matplotlib
+numpy
+scikit-learn
+catboost
+xgboost
+lightgbm
+smogn
+torch
