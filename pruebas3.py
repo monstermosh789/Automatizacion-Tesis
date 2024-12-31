@@ -183,7 +183,8 @@ def convertir_timestamp_a_str(valor):
 # LISTA DE [CARRERA, SPREADSHEET_ID] PARA RECORRER EN EL FOR
 # -------------------------------------------------------------------
 lista_carreras_spreadsheets = [
-    ["Ingeniería en Realidad Virtual y Diseño de Videojuegos Digitales", "1hvmrFY2mWxwydQCXrJuuqGTJzQiaRe8smyQjye58ZGs"]
+    ["Ingeniería en Realidad Virtual y Diseño de Videojuegos Digitales", "1hvmrFY2mWxwydQCXrJuuqGTJzQiaRe8smyQjye58ZGs"
+    "Periodismo", "13rPbX2ZvtWcAinluVm_vmPoSLS4Nk00org5YDj9H8S8"]
 ]
 #lista_carreras_spreadsheets = [
 #    ["Ingeniería en Realidad Virtual y Diseño de Videojuegos Digitales", "1hvmrFY2mWxwydQCXrJuuqGTJzQiaRe8smyQjye58ZGs"],
