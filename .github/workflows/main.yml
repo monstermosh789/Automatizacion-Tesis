@@ -3,7 +3,7 @@ name: Python Automation
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *' # Se ejecuta todos los días a las 3 AM
+    - cron: '0 3 1 * *' # Se ejecuta el primer día de cada mes a las 3 AM
 
 jobs:
   run-script:
