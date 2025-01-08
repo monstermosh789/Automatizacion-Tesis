@@ -82,7 +82,9 @@ def normalizar_rut(rut_str):
 # Sentimientos (nlptown/bert-base-multilingual-uncased-sentiment)
 sentiment_analyzer = pipeline(
     "sentiment-analysis",
-    model="nlptown/bert-base-multilingual-uncased-sentiment"
+    model="nlptown/bert-base-multilingual-uncased-sentiment",
+    truncation=True,
+    max_length=512,
 )
 
 # Emociones en inglés (j-hartmann/emotion-english-distilroberta-base)
@@ -183,7 +185,30 @@ def convertir_timestamp_a_str(valor):
 # LISTA DE [CARRERA, SPREADSHEET_ID] PARA RECORRER EN EL FOR
 # -------------------------------------------------------------------
 lista_carreras_spreadsheets = [
-    ["Periodismo", "13rPbX2ZvtWcAinluVm_vmPoSLS4Nk00org5YDj9H8S8"]
+    # Facultad: Ingeniería, Ciencia y Tecnología
+    ["Ingeniería, Ciencia y Tecnología", "Ingeniería en Realidad Virtual y Diseño de Videojuegos Digitales", "1hvmrFY2mWxwydQCXrJuuqGTJzQiaRe8smyQjye58ZGs"],
+    ["Ingeniería, Ciencia y Tecnología", "Contador Auditor", "1k8qX772KtWFzXN-7pmoQarDPSOxZHiSq9Dxb9y5ovN8"],
+
+    # Facultad: Ciencias Humanas
+    ["Ciencias Humanas", "Derecho", "1rcJkRDmI4zwAo4AZ0_sitLbFg_VpU_-e0xLYlVsPt_8"],
+    ["Ciencias Humanas", "Periodismo", "13rPbX2ZvtWcAinluVm_vmPoSLS4Nk00org5YDj9H8S8"],
+    ["Ciencias Humanas", "Trabajo Social", "1nFq7NRmCxXwZae4GGmU_5IajF6D0EfhDIT9FxpMYqQc"],
+    ["Ciencias Humanas", "Psicología", "1m9nf9ckOkXIHWn6Vm_agT9_bGXXE-JzroM6uybLIYu8"],
+    ["Ciencias Humanas", "Pedagogía para Educación General Básica", "1UaxcKpWK-Pat-zwPrCWY6Xh0zQ0fCjEP4RoTI1_uV9I"],
+    ["Ciencias Humanas", "Pedagogía en Educación Parvularia", "1Gx_Hddt1f32zonPqJ21UWclTp9G2kILFqsaAbrSl7mY"],
+    ["Ciencias Humanas", "Pedagogía en Educación Física, Deporte y Recreación", "1PW4NSKpPbfylVL2r_Fls83IZNeFWzitEePuJVn8GQxw"],
+
+    # Facultad: Ciencias de la Salud
+    ["Ciencias de la Salud", "Kinesiología", "1BGB5mlUmQ8DPaMWzAwNLk-zZJ6AbXBNvaddWMeYhB2o"],
+    ["Ciencias de la Salud", "Nutrición y Dietética", "1ZnyZZ2pNvgbKHZMoXRFXmmXwMrmagbZCrxE7uRb_bts"],
+    ["Ciencias de la Salud", "Tecnología Médica IMAGENOLOGÍA", "12cbyMoYItjrhQ4nNzt07taXtwr3umCRh6gOjCB0o7p0"],
+    ["Ciencias de la Salud", "Tecnología Médica OFTALMOLOGÍA", "1_8qCw3NB3ELxE30wGeJeTn4lEbl95vXs3KxBnyIqsCE"],
+    ["Ciencias de la Salud", "Fonoaudiología", "1rZn_7OYlp_b2YzjFiEn3-MaABOXpVBiQK3TLfVrxbJE"],
+
+    # Facultad: Ciencias Médicas
+    ["Ciencias Médicas", "Medicina Veterinaria", "1pc00nez7AVXoMdHS9yF4JDQHosAh7jQfzZYkiuSA8xI"],
+    ["Ciencias Médicas", "Enfermería", "19a3Clz4VT0V4qq-dU3sb9gJkm5We3-bymF12PM-nC_w"],
+    ["Ciencias Médicas", "Obstetricia y Puericultura", "1vKRk3dOm5raedbpLyFwsJvacKs4FO3gXAg1Jn5s2bvE"]
 ]
 #lista_carreras_spreadsheets = [
 #    ["Ingeniería en Realidad Virtual y Diseño de Videojuegos Digitales", "1hvmrFY2mWxwydQCXrJuuqGTJzQiaRe8smyQjye58ZGs"],
@@ -194,7 +219,7 @@ lista_carreras_spreadsheets = [
 # -------------------------------------------------------------------
 # BUCLE PRINCIPAL
 # -------------------------------------------------------------------
-for carrera, spreadsheet_id in lista_carreras_spreadsheets:
+for facultad, carrera, spreadsheet_id in lista_carreras_spreadsheets:
     print(f"Procesando carrera: {carrera} | SpreadsheetID: {spreadsheet_id}")
 
     # 1) Abrimos el Spreadsheet y leemos la hoja "Respuestas de formulario 1"
