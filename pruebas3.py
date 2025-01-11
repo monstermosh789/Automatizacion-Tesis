@@ -182,7 +182,6 @@ lista_carreras_spreadsheets = [
     # Facultad: Ingeniería, Ciencia y Tecnología
     ["Ingeniería, Ciencia y Tecnología", "Ingeniería en Realidad Virtual y Diseño de Videojuegos Digitales", "1hvmrFY2mWxwydQCXrJuuqGTJzQiaRe8smyQjye58ZGs"],
     ["Ingeniería, Ciencia y Tecnología", "Contador Auditor", "1k8qX772KtWFzXN-7pmoQarDPSOxZHiSq9Dxb9y5ovN8"],
-    ["Ingeniería, Ciencia y Tecnología", "Ingeniería en Informática", "1p24iQ1dWLhRd6UYn3dMmputf9XRwIpsQ2M3nWBVx5FI"],
 
     # Facultad: Ciencias Humanas
     ["Ciencias Humanas", "Derecho", "1rcJkRDmI4zwAo4AZ0_sitLbFg_VpU_-e0xLYlVsPt_8"],
@@ -363,4 +362,11 @@ for facultad, carrera, spreadsheet_id in lista_carreras_spreadsheets:
     valores     = df_temporal_str.values.tolist()
     nueva_hoja.update([encabezados] + valores)
 
+    print(f"Finalizado para la carrera: {carrera}")
 
+# Configuración para mostrar todas las columnas y filas
+pd.set_option('display.max_columns', None)  # Muestra todas las columnas
+pd.set_option('display.max_rows', None)     # Muestra todas las filas
+
+# Supongamos que df es tu DataFrame
+print(df_temporal)
