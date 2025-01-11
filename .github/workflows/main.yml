@@ -26,4 +26,4 @@ jobs:
     - name: Run the script
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-      run: python pruebas3.py
+      run: python Codigo Automacizacion.py
