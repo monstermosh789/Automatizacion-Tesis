@@ -1,3 +1,4 @@
+# Código Python para el sistema automatizado de análisis de datos
 
 
 import gspread
@@ -362,11 +363,4 @@ for facultad, carrera, spreadsheet_id in lista_carreras_spreadsheets:
     valores     = df_temporal_str.values.tolist()
     nueva_hoja.update([encabezados] + valores)
 
-    print(f"Finalizado para la carrera: {carrera}")
 
-# Configuración para mostrar todas las columnas y filas
-pd.set_option('display.max_columns', None)  # Muestra todas las columnas
-pd.set_option('display.max_rows', None)     # Muestra todas las filas
-
-# Supongamos que df es tu DataFrame
-print(df_temporal)
